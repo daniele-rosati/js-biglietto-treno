@@ -6,8 +6,8 @@
 // L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo). Questo richiederà un minimo di ricerca.
 
 // Chiedi all'utente i chilometri e l'età
-var chilometri = parseFloat(prompt("Inserisci il numero di chilometri che vuoi percorrere:"));
-var eta = parseInt(prompt("Inserisci la tua età:"));
+const chilometri = parseFloat(prompt("Inserisci il numero di chilometri che vuoi percorrere:"));
+const eta = parseInt(prompt("Inserisci la tua età:"));
 
 function calcolaPrezzoViaggio(chilometri, eta) {
     // Verifica che i chilometri siano un numero positivo
@@ -16,10 +16,10 @@ function calcolaPrezzoViaggio(chilometri, eta) {
     }
 
     // Calcola il prezzo del biglietto in base ai chilometri
-    var prezzoBase = chilometri * 0.21;
+    const prezzoBase = chilometri * 0.21;
 
     // Calcola lo sconto in base all'età
-    var scontoPercentuale = 0;
+    const scontoPercentuale = 0;
     if (eta < 18) {
         scontoPercentuale = 20;
     } else if (eta >= 65) {
@@ -27,16 +27,16 @@ function calcolaPrezzoViaggio(chilometri, eta) {
     }
 
     // Calcola il prezzo scontato
-    var prezzoScontato = prezzoBase - (prezzoBase * (scontoPercentuale / 100));
+    const prezzoScontato = prezzoBase - (prezzoBase * (scontoPercentuale / 100));
 
     // Formatta il prezzo finale con massimo due decimali
-    var prezzoFinale = prezzoScontato.toFixed(2);
+    const prezzoFinale = prezzoScontato.toFixed(2);
 
     // Restituisci il prezzo finale
     return "Il prezzo del viaggio è: " + prezzoFinale + " €";
 }
 
 // Calcola e visualizza il prezzo finale del viaggio
-var prezzoViaggio = calcolaPrezzoViaggio(chilometri, eta);
+const prezzoViaggio = calcolaPrezzoViaggio(chilometri, eta);
 console.log(prezzoViaggio);
 
