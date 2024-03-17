@@ -8,3 +8,27 @@
 // Chiedi all'utente i chilometri e l'età
 
 
+// Chiedi all'utente i chilometri da percorrere
+const kilometers = parseFloat(prompt("Inserisci il numero di chilometri che vuoi percorrere:"));
+
+// Chiedi all'utente l'età
+const age = parseInt(prompt("Inserisci la tua età:"));
+
+// Calcola il prezzo totale del viaggio
+const ticketPricePerKm = 0.21;
+let totalPrice = kilometers * ticketPricePerKm;
+
+// Applica lo sconto per i minorenni e gli over 65
+if (age < 18) {
+    const discount = totalPrice * 0.2;
+    totalPrice -= discount;
+} else if (age >= 65) {
+    const discount = totalPrice * 0.4;
+    totalPrice -= discount;
+}
+
+// Formatta il prezzo finale
+totalPrice = totalPrice.toFixed(2);
+
+// Mostra il prezzo finale all'utente
+alert("Il prezzo totale del viaggio è: " + totalPrice + " €.");
